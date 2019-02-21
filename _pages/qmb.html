@@ -1,0 +1,168 @@
+---
+layout: blank
+permalink: /querymapbiolovision/
+
+plugins: 
+- QueryMapBiolovision
+- token
+- jQuery
+- Bootstrap
+- Leaflet
+- Leaflet.draw
+- leaflet-providers
+- selectize.js
+- bootstrap-datetimepicker
+- moment.js
+- font-awesome
+- leaflet-pip
+- leaflet-easybutton
+- no_default_script
+- popper.js
+---
+<div class="d-flex">
+	<div id="sidebar" class=" collapse show width">
+		<div class="row">
+			<h1 class="title" >Search</h1><!--<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>-->
+		</div>
+		<form id="yourForm">
+			<div class="row">
+				<div class="col-md-12" >
+					<h4 class="subtitle">Place</h4> 
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-9" style="padding-right:3px;"><select id="countrySelect" class="form-control" type="text" placeholder="Choose a websites"></select></div>
+				<div class="col-md-3 text-center" style="padding-left:3px;"><button type="button" class="btn btn-primary btn-primary btn-md" id="search-on-map">Select</button></div>
+				<div class="col-md-12">
+					<nav class="nav nav-pills nav-fill" id="place">
+						<a class="nav-item nav-link active" name="all" title="All places from the selected region" href="#">All</a>
+						<a class="nav-item nav-link" href="#" name="coord" title="Draw coordinate on map" >Coordinate
+							<button class="easy-button-button" id="draw-rectangle" type="button">
+								<span class="fa fa-map-marker"></span>
+							</button>
+						</a>
+						<!--<button type="button" id="draw-rectangle" class="btn btn-xs btn-primary">Draw</button> -->
+					</nav>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12" >
+					<h4 class="subtitle">Date</h4> 
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-8 radio">
+					<label><input type="radio" name="radio_date" value="range">
+						<div class="input-group input-daterange">
+							<input class="form-control" type="text" value="" id="input-date-from">
+							<span class="input-group-addon">to</span>
+							<input class="form-control" type="text" value="" id="input-date-to">
+						</div>
+					</label>
+				</div> 
+				<div class="col-lg-4 radio">
+					<label><input type="radio" name="radio_date" value="offset"> <input class="form-control" id="date_ago" type="number" value="5" min="0" style="margin-right: 3px;">days</label>
+				</div>
+				<div class="col-lg-12 radio date-cust">
+					<a href="#" id="date-range-10years">[last 10 years]</a> <a href="#" id="date-range-1year">[last year]</a> <a href="#" id="date-range-thisyear">[this year]</a> <a href="#" id="date-range-thismonth">[this month]</a> <a href="#" id="date-range-thisweek">[this week]</a>
+				</div>
+				<div class="col-lg-8 radio">
+					<label><input type="radio" name="radio_date" value="season">
+						<div class="input-group input-daterange">
+							<input class="form-control" type="text" value="" id="input-season-from"> 
+							<span class="input-group-addon">to</span>
+							<input class="form-control" type="text" value="" id="input-season-to">
+						</div>
+					</label>
+				</div>
+				<div class="col-lg-4 radio">
+					<label><input type="radio" name="radio_date" value="all">All time</label>
+				</div>
+				<div class="col-lg-12 radio date-cust">
+					<a href="#" id="date-season-spring">[Spring]</a> <a href="#" id="date-season-summer">[Summer]</a> <a href="#" id="date-season-autumn">[Autumn]</a> <a href="#" id="date-season-winter">[Winter]</a> <a href="#" id="date-season-plusmoins3">[+/-3d]</a> <a href="#" id="date-season-plusmoins7">[+/-7d]</a> <a href="#" id="date-season-plusmoins14">[+/-14d]</a>
+				</div> 
+			</div> 
+			<div class="row">
+				<div class="col-md-12" >
+					<h4 class="subtitle">Species</h4> 
+				</div>
+			</div> 
+			<div class="row form-group">
+				<div class="col-lg-12 radio">
+					<label>
+						<input type="radio" name="radio_specie" value="category" checked="checked">
+						<div id="cat" class="list-group list-group-horizontal btn-group-justified btn-xs" style="display: inline-flex; padding-left: 4px;">
+							<a class="list-group-item active" name="never" title="Never recorded">+++</a>
+							<a class="list-group-item active" name="veryrare" title="Very Rare">++</a>
+							<a class="list-group-item active" name="rare" title="Rare">+</a>
+							<a class="list-group-item active" name="unusual" title="Unusual">-</a>
+							<a class="list-group-item" name="common" title="Common">--</a>
+							<a class="list-group-item" name="verycommon" title="Very Common">---</a>
+							<a class="list-group-item" name="escaped" title="Escaped">E</a>
+						</div>
+						<div id="search_species_lang" class="btn-xs list-group list-group-horizontal text-right btn-xs">
+							<a class="list-group-item active" name="en" title="English">EN</a>
+							<a class="list-group-item active" name="fr" title="French">FR</a>
+						</div>
+					</label>
+				</div>
+				<div class="col-md-10 radio">
+					<label><input type="radio" name="radio_specie" value="species"><select id="search_species" class="form-control" type="text" placeholder="Search a specie..."></select></label>
+				</div>
+				<div class="col-md-2 radio" style="padding-right:20px;">
+					<button type="button" class="btn btn-md btn-primary" id="button-sp-info" title="See bird statistic and information">Info</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6" >
+					<h4 class="subtitle">Other</h4> 
+				</div>
+				<div class="col-md-6" >
+					<h4 class="subtitle">Outputs</h4> 
+				</div>
+			</div> 
+			<div class="row form-group">
+				<div class="col-md-6"  id="checkbox-list">
+					<div class="checkbox"><label><input id="only_mine" type="checkbox">Mine</label></div>
+					<div class="checkbox"><label title="Only select new data since last session"><input id="only_new" type="checkbox">New</label></div>
+
+					<div class="checkbox"><label title="Only select data with picture"><input id="only_picture" type="checkbox">Picture</label></div>
+					<div class="checkbox"><label title="Only select data with sound"><input id="only_sound" type="checkbox">Sound</label></div>
+				</div>
+				<div class="col-md-6">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Result Format
+						<div class="dropdown-menu" id="website-dropdown-toggle" aria-labelledby="dropdownMenuButton" title="View the result on the corresponding biolovision website. Select the visualization of the website here.">
+							<a class="dropdown-item" name="list" href="#">Detail List</a>
+							<a class="dropdown-item" name="species" href="#">Species List</a>
+							<a class="dropdown-item" name="synth" href="#">Daily Summary</a>
+							<a class="dropdown-item" name="histo" href="#">Temporal Graph</a>
+							<a class="dropdown-item" name="alt" href="#">Altitude Graph</a>
+							<a class="dropdown-item" name="map" href="#">Static Map</a>
+						</div>
+						<div class="dropdown">
+
+						</div>
+					</div>
+				</div>
+			<div class="row" id="buttons">
+				<div class="col-md-12 center-block">
+					<input title="Let's Go!" type="submit" value="Submit" id="send" class="btn btn-primary btn-lg center-block">
+				</div>
+			</div>
+		</form>
+
+		<label>Convert Specie List (HTML) to CSV
+			<input type="file" id="uploadSpecieList" class="form-control" accept=".html">
+			<span class="custom-file-control"></span>
+		</label>
+		<label>Convert eBird Target (HTML) to CSV
+			<input type="file" id="uploadeBirdTarget" class="form-control" accept=".html">
+			<span class="custom-file-control"></span>
+		</label>
+	</div>
+	<div class="flex-grow-1 flex-fill">
+		<div id="map1" class="sidebar-map"></div>
+	</div>
+</div>
