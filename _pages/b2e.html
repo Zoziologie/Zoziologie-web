@@ -1,7 +1,8 @@
 ---
+title: "Biolovision2eBird"
 layout: splash-perso
 permalink: /biolovision2ebird/
-footer_scripts: true
+
 plugins: 
 - Biolovision2eBird
 - token
@@ -12,13 +13,11 @@ plugins:
 - Leaflet.MakiMarker
 - leaflet-providers
 - moment.js
-- bootstrap-datetimepicker
 - Leaflet.awesome-markers
 - dragula
 - xml2json
 - Leaflet.markercluster
 - Leaflet.encoded
-- font-awesome
 ---
 <h1> Biolovision2eBird</h1>
 <div id="c1" class="container">
@@ -28,13 +27,15 @@ plugins:
 			<strong>Biolovision2eBird</strong> convert your observation of any biolovision website (ornitho.ch, faune-alsace.org, ...) to an eBird Checklist! It basically take the export file (in .xml format) from biolovision and match the data into the <a href="http://help.ebird.org/customer/portal/articles/973915-uploading-data-to-ebird#ebird-record-format-specifications" target="_blank" rel="noopener">eBird Record Format</a> which can be easily uploaded on eBird.</p>
 		</div>
 		<div class="col-sm-5"><img src="https://zoziologie.raphaelnussbaumer.com/assets/biolovision2eBird/images/Selection_019-1.png" /></div>
-		<div class="col-sm-2 text-center"></div>
+		<div class="col-sm-2 text-center vcenter">
+			<i class="fas fa-long-arrow-alt-right fa-5x"></i>
+		</div>
 		<div class="col-sm-5"><img src="https://zoziologie.raphaelnussbaumer.com/assets/biolovision2eBird/images/Selection_020-1.png" /></div>
 	</div>
 	<h2>2. Import Biolovision data </h2>
 	<div class="row">
 		<p>First, you need to export your file from biolovision. Go on the website, then go in "query your data" and export them in .json <img src="https://zoziologie.raphaelnussbaumer.com/assets/biolovision2eBird/images/json.png" alt="json"/>. If you are already login in this computer, you can make the query using the form below:</p>
-		<div class="row download-from-biolovision">
+		<form onsubmit="downloadfx(); return false;" class="row download-from-biolovision">
 			<div class="col-lg-3 form-group"><label for="sel-website">a) Select a website:</label>
 				<input id="sel-website" class="form-control" list="websites" name="website" type="text" value="www.ornitho.ch" />
 				<datalist id="websites">
@@ -98,18 +99,19 @@ plugins:
 					<div class="radio">
 						<label>
 							<input name="radio_date" type="radio" value="range" />
-							<div class="input-group input-daterange"><input id="input-date-from" class="form-control" type="text" />
+							<div class="input-group ">
+								<input id="input-date-from" class="form-control" type="date" />
 								<span class="input-group-addon">to</span>
-								<input id="input-date-to" class="form-control" type="text" />
+								<input id="input-date-to" class="form-control" type="date" />
 							</label>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-3 form-group"><label for="link-id">c) Download file</label>
-				<button id="link-id" class="btn btn-default" type="button">Download Data Observation</button>
+				<button id="link-id" class="btn btn-default" type="submit">Download Data Observation</button>
 			</div>
-		</div>
+		</form>
 	</div>
 	<div class="row">
 		Drag the xml file on the zone above (or click on the zone to open the input window). You can directly export your  data
@@ -129,19 +131,19 @@ plugins:
 	</div>
 	<div id="assign-row" class="row">
 		<div class="col-lg-3"><label for="button-create-hotspot">Add a marker on the map:</label>
-			<button id="button-create-hotspot" class="btn btn-block btn-primary"><i class="fa fa-list"></i> Create Checklist</button>
+			<button id="button-create-hotspot" class="btn btn-block btn-default"><i class="fa fa-list"></i> Create Checklist</button>
 		</div>
 		<div class="col-lg-5"><label for="selHotspot">Select the checklist to which attribute sightings:</label>
 			<select id="selHotspot" class="form-control">
 			</select>
 		</div>
 		<div class="col-lg-4"><label for="button-select-hotspot">Draw a rectangle over the sightings:</label>
-			<button id="button-select-hotspot" class="btn btn-block btn-primary"><i class="fa fa-square"></i> Attribute Sightings</button>
+			<button id="button-select-hotspot" class="btn btn-block btn-default"><i class="fa fa-square"></i> Attribute Sightings</button>
 		</div>
 	</div>
 	<div class="row">
 		<div id="modal-map" class="map" style="height: 500px; margin-bottom: 20px;"></div>
-		<button id="button-process" class="btn btn-block btn-primary">I'm done. Let's carry on...</button>
+		<button id="button-process" class="btn btn-block btn-default">I'm done. Let's carry on...</button>
 	</div>
 </div>
 <div id="c3" class="container" style="display: none;">
