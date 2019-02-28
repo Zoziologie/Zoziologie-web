@@ -19,12 +19,13 @@ plugins:
 - no_default_script
 - popper.js
 ---
+
 <div class="d-flex">
 	<div id="sidebar" class=" collapse show width">
 		<div class="row">
-			<h1 class="title" >Search</h1><!--<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>-->
+			<h1 class="title" >Search</h1>
 		</div>
-		<form id="yourForm">
+		<form id="yourForm" onsubmit="window.open(getLink()); return false;">
 			<div class="row">
 				<div class="col-md-12" >
 					<h4 class="subtitle">Place</h4> 
@@ -36,14 +37,12 @@ plugins:
 				<div class="col-md-12">
 					<nav class="nav nav-pills nav-fill" id="place">
 						<a class="nav-item nav-link active" name="all" title="All places from the selected region" href="#">All</a>
-						<a class="nav-item nav-link" href="#" name="coord" title="Draw coordinate on map" >Coordinate
-							<button class="easy-button-button" id="draw-rectangle" type="button">
-								<span class="fa fa-map-marker"></span>
+						<a class="nav-item nav-link" href="#" name="coord" title="Using rectangle">Coordinate
+							<button class="easy-button-button" id="draw-rectangle" title="Draw the rectangle on the map" type="button">
+								<i class="fas fa-square-full fa-sm"></i>
 							</button>
 						</a>
-						<!--<button type="button" id="draw-rectangle" class="btn btn-xs btn-primary">Draw</button> -->
 					</nav>
-					
 				</div>
 			</div>
 			<div class="row">
@@ -131,7 +130,7 @@ plugins:
 					<div class="checkbox"><label title="Only select data with sound"><input id="only_sound" type="checkbox">Sound</label></div>
 				</div>
 				<div class="col-md-6">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
 						Result Format
 						<div class="dropdown-menu" id="website-dropdown-toggle" aria-labelledby="dropdownMenuButton" title="View the result on the corresponding biolovision website. Select the visualization of the website here.">
 							<a class="dropdown-item" name="list" href="#">Detail List</a>
@@ -148,7 +147,7 @@ plugins:
 				</div>
 			<div class="row" id="buttons">
 				<div class="col-md-12 center-block">
-					<input title="Let's Go!" type="submit" value="Submit" id="send" class="btn btn-primary btn-lg center-block">
+					<input title="Let's Go!" type="submit" id="send" class="btn btn-primary btn-lg center-block">
 				</div>
 			</div>
 		</form>

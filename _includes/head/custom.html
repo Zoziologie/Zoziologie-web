@@ -1,24 +1,19 @@
 <!-- start custom header snippets -->
 
 
-
+{% if page.plugins contains "no_default_script" %}
+  <!-- NOT INCLUDED BECAUSE OF head/custom.html
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script> -->
+{% else  %}
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+{% endif %}
 
 
 {% if page.plugins %}
-
-
-	{% if page.plugins contains "no_default_script" %}
-	  <!-- NOT INCLUDED BECAUSE OF head/custom.html
-	  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-	  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
-	  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script> -->
-	{% else  %}
-	  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-	  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
-	  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
-	{% endif %}
-
-
 
 	<!-- Main Plugins -->
 	{% if page.plugins contains "jQuery" %}
@@ -111,6 +106,10 @@
 		<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
 	{% endif %}	
+	{% if page.plugins contains "slick" %}
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	{% endif %}	
 
 
 	<!-- Plugins from Zoziology -->
@@ -133,6 +132,10 @@
 	{% if page.plugins contains "eBird2LaTeX" %}
 		<script src='/assets/eBird2LaTeX/e2L.js' type="text/javascript"></script>
 		<link rel="stylesheet" href="/assets/eBird2LaTeX/e2L.css" type="text/css">
+	{% endif %}
+	{% if page.plugins contains "GeoJSON" %}
+		<script src='/assets/ViewGeoJSON/geojson.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="/assets/ViewGeoJSON/geojson.css" type="text/css">
 	{% endif %}
 {% endif %}
 
