@@ -12,7 +12,7 @@ header:
   caption: "Eurasian Dotterel (*Charadrius morinellus*) Crêta de Vella, CH (03.09.2017)"
 excerpt: "Explore web apps for birdwatchers!<br>"
 intro: 
-  - excerpt: 'Wonder what the name means? <br>**Zoziologie** goes back to my childhood, when my brother made fun of my passion for birds ("oiseaux" in French) by calling it "zozio". As I grew older and pursued scientific studies, I tried to combine my passion with birds (zozio) with my scientific background (logos), that gave birth to a new discpline: zoziologie!'
+  - excerpt: '<img src="/assets/images/logo.png" style="width: 50px;margin-right: 10px;">** Wonder why the website has such a strange name?** <br> *Zoziologie* goes back to my childhood, when my brother made fun of my passion for birds ("oiseaux" in French) by calling it "zozio". As I grew older and pursued scientific studies, I tried to combine my passion with birds (zozio) with my scientific background (logos), that gave birth to a new discpline: zoziologie!<img src="/assets/images/logo.png" style="width: 50px;margin-left: 10px;"> '
 feature_row:
   - image_path: assets/SeeYourObservations/images/sYO_gif_static.png
     alt: "see Your Observation gif"
@@ -57,7 +57,7 @@ feature_row4:
     title: "Quantifying bird migration with weather radars"
     excerpt: 'My current project is to quantify spatio-temporal patterns of bird migration using weather radar data.'
     url: "https://bmm.raphaelnussbaumer.com/"
-    btn_label: "d " 
+    btn_label: " " 
 ---
 
 
