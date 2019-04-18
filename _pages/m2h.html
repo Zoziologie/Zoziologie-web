@@ -42,12 +42,12 @@ plugins:
 				<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
 			</h1>
 			
-			<h2>What is this app?</h2>
-			This app is designed to find your checklists for which the location is not an eBird hotspot and propose the nearby hotspots.<br> 
-			<h2>Generate your eBird File</h2>
-			The first step is to download all your eBird data on your computer.
-			<button role="button" class="btn btn-primary align-center" onclick="window.open('https://ebird.org/downloadMyData', '_blank');">Download your data in eBird</button>
-			<h2>Import your eBird File</h2>
+			<h2>How does it work?</h2>
+			<p>This app helps you find your checklists for which the associated location is not an eBird hotspot (i.e. personal location) and suggests nearby hotspots. A link to to merge your personal location to the hotspot will be provided. Assigning a hotspot to your data is essential for data analysis. For instance, you can then compute the probability of observation of each specie for a given hotspot and <a href="https://zoziologie.raphaelnussbaumer.com/ebird2latex/" traget="_blank">generate a checklist</a>. Step by step instructions are given below.</p>
+			<h2>1. Generate your eBird File</h2>
+			<p>The first step is to download all your eBird data on your computer.</p>
+			<button role="button" class="btn btn-primary" style="width:100%;" onclick="window.open('https://ebird.org/downloadMyData', '_blank');">Download your eBird file</button>
+			<h2>2. Import your eBird File</h2>
 			<p>Import your <code>MyEBirdData.csv</code> using the upload file below. Note that the file is never sent to our server, only used in your browser.</p>
 			<label  style="width: 100%;">
 				<!--class="custom-file"<input type="file" id="uploadMyEBirdData" class="custom-file-input" accept=".csv">-->
@@ -60,8 +60,9 @@ plugins:
 		</div>
 
 		<div class="leaflet-sidebar-pane" id="profile">
-			<h1 class="leaflet-sidebar-header">Region download<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-			<h2><a data-toggle="collapse" href="#instruction1"  aria-expanded="true" aria-controls="instruction1" class="instructiona">Instruction  data <i class="fas align-right fa-chevron-up instruction-chevron"></i></a></h2>
+			<h1 class="leaflet-sidebar-header">eBird hotspots<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+			<h2>3. Get eBird hotspots</h2>
+			<a data-toggle="collapse" href="#instruction1"  aria-expanded="true" aria-controls="instruction1" class="instructiona">Instruction<i class="fas align-right fa-chevron-up instruction-chevron"></i></a>
 			<div class="collapse show" id="instruction1">
 				<p>You can now see all your birded locations with the number of checklists (icon value).</p>
 				<p>From these locations, we listed below the different countries/regions you've been birding. The blue badges <span class="badge badge-primary badge-pill" style="float:inherit;">25</span> indicate the number of different locations for that particular region.</p>
@@ -69,12 +70,13 @@ plugins:
 				<p>Once you are done, click on the button "Find locations without hotspot" below the list.</p>
 			</div>
 			<div class="list-group list-group-root well" id="list-countrregionlist"></div>
-			<button type="button" class="btn btn-primary align-center" id="FindLocationHotspot" onclick="FindLocationHotspot()">Find Locations without hotspot</button>
+			<button type="button" class="btn btn-primary align-center" id="FindLocationHotspot" onclick="FindLocationHotspot()">Find locations without hotspot</button>
 		</div>
 
 		<div class="leaflet-sidebar-pane" id="messages">
 			<h1 class="leaflet-sidebar-header">Locations<span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-			<h2><a data-toggle="collapse" href="#instruction2"  aria-expanded="true" aria-controls="instruction2" class="instructiona">Instruction <i class="fas fa-chevron-up align-right instruction-chevron"></i></a></h2>
+			<h2>4. Merge personal locations</h2>
+			<a data-toggle="collapse" href="#instruction2"  aria-expanded="true" aria-controls="instruction2" class="instructiona">Instruction<i class="fas fa-chevron-up align-right instruction-chevron"></i></a>
 			<div class="collapse show" id="instruction2">			
 				<p>Locations without hotspots are listed in the table below and sorted by distance to the nearest hotspot (right column). Click on each line to view these on the map.</p>
 				<p>If you would like to change the location, click on your marker on the map and a link to your checklist will be provided. There, simply click on "Edit location". If you wish to change several checklists from the same location, we suggest you use the "My location" page of eBird.</p>
@@ -83,8 +85,8 @@ plugins:
 			<table class="table table-condensed table-hover">
 				<thead>
 					<tr>
-						<th>Place</th>
-						<th>Nearest Hotspot</th>
+						<th>Your location</th>
+						<th>Nearest hotspot</th>
 					</tr>
 				</thead>
 				<tbody id="messages-table">

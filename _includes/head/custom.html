@@ -78,6 +78,11 @@
 		<script src='https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.0.6/js/leaflet-sidebar.min.js' type="text/javascript"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.0.6/css/leaflet-sidebar.min.css">
 	{% endif %}	
+	{% if page.plugins contains "leaflet-locatecontrol" %}
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css">
+	{% endif %}	
+	
 
 
 	<!-- Plugins from other -->
