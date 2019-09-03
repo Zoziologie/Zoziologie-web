@@ -1,0 +1,31 @@
+---
+layout: splash-perso
+permalink: /ebirdtarget2csv/
+title: eBirdTarget2csv
+plugins: 
+- eBirdTarget2csv
+- token
+- jQuery
+---
+
+<h1>eBirdTarget2csv</h1>
+
+<b>eBirdTarget2csv</b> is a very simple JavaScript app to convert the eBird target webpage (html) to a csv file. 
+
+<h2>How does it work?</h2>
+<ol>
+	<li>Go on the <a href="https://ebird.org/targets" target="_blank">eBird target page.</a></li>
+	<li>Generate the target list you want on the webpage.</li>
+	<li>Save the html page in your computer (<kbd>Ctrl</kbd>+<kbd>S</kbd> on windows or <kbd>&#8984</kbd>+<kbd>S</kbd> on mac).</li>
+	<li>Upload the html file in box below (drag and drop work fine).</li>
+		<div id="drobox-outer">
+			<div id="dropbox">
+				Drop the html  file here or click to upload
+				<input id="uploadeBirdTarget" style="display: none;" type="file" accept=".html"/>
+			</div>
+		</div>
+	<li>This will open a "save as" windows to save your csv file generated from the html.</li>
+</ol>
+
+<h2>More info</h2>
+For any issues or suggestions, go to the github page <a href="https://github.com/Zoziologie/eBirdTarget2csv" target="_blank"><i class="fab fa-github"></i>/Zoziologie/eBirdTarget2csv</a>.
