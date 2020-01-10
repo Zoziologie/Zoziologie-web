@@ -135,13 +135,13 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      #url: "https://twitter.com/rafnuss"
+      url: "https://twitter.com/rafnuss"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: "https://www.facebook.com/rafnuss"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      #url: "https://github.com/rafnuss"
+      url: "https://github.com/rafnuss"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -151,6 +151,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:rafnuss@gmail.com
 
 
 # Reading Files

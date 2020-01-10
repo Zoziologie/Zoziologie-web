@@ -1,0 +1,8 @@
+{% if page.plugins-footer %}
+	{% if page.plugins-footer contains "google-map" %}
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjl5O7YmhhC3lG5l0KtVZiFeYZGkmK7cY&callback=initMap"></script>
+	{% endif %}	
+	{% if page.plugins-footer contains "markerclusterer" %}
+		<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    {% endif %}
+{% endif %}	
