@@ -24,11 +24,11 @@
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 	{% endif %}
 	{% if page.plugins contains "popper.js" %}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
 	{% endif %}	
 	{% if page.plugins contains "Bootstrap" %}
-		<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' type="text/javascript"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+		<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="text/css">
 	{% endif %}
 	{% if page.plugins contains "token" %}
 		<script src='/assets/token.js' type="text/javascript"></script>
@@ -73,7 +73,7 @@
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/Leaflet.Spin/1.1.0/leaflet.spin.min.js'   type="text/javascript"></script>
 	{% endif %}
 	{% if page.plugins contains "leaflet-providers" %}
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.5.0/leaflet-providers.min.js'  type="text/javascript"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.10.2/leaflet-providers.min.js'  type="text/javascript"></script>
 	{% endif %}
 	{% if page.plugins contains "Leaflet.awesome-markers" %}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
@@ -144,9 +144,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js" ></script>
 	{% endif %}	
 	{% if page.plugins contains "bootstrap-toggle" %}
-	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-{% endif %}	
+		<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	{% endif %}	
+	{% if page.plugins contains "bootstrap-select" %}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+	{% endif %}	
 
 	<!-- Vue Plugins -->
 	{% if page.plugins contains "vuejs" %}
@@ -169,6 +173,10 @@
 		<script src='https://unpkg.com/vue-select@latest' type="text/javascript"></script>
 		<link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css" type="text/css">
 	{% endif %}	
+	{% if page.plugins contains "vue-cookies" %}
+		<script src='https://unpkg.com/vue/dist/vue.js'></script>
+	{% endif %}	
+	
 
 	<!-- Plugins from Zoziology -->
 	{% if page.plugins contains "SeeYourObservations" %}
@@ -203,17 +211,25 @@
 		<script src='/assets/GlobalRareeBird/grb.js' type="text/javascript"></script>
 		<link rel="stylesheet" href="/assets/GlobalRareeBird/grb.css" type="text/css">
 	{% endif %}
-	{% if page.plugins contains "BirdingKenyaWitheBird" %}
-		<script src='/assets/BirdingKenyaWitheBird/bkwe.js' type="text/javascript"></script>
-		<link rel="stylesheet" href="/assets/BirdingKenyaWitheBird/bkwe.css" type="text/css">
+	{% if page.plugins contains "BirdingWitheBird" %}
+		<script src='/assets/BirdingWitheBird/bwe.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="/assets/BirdingWitheBird/bwe.css" type="text/css">
 	{% endif %}
 	{% if page.plugins contains "map-ebird-api" %}
 	<script  src='/assets/Map-eBird-API/MwAPI.js' type="text/javascript"></script>
 	<link rel="stylesheet" href="/assets/Map-eBird-API/MwAPI.css" type="text/css">
 	{% endif %}
+	{% if page.plugins contains "map-african-bird-atlas-api" %}
+		<script  src='/assets/Map-African-Bird-Atlas-API/MaAPI.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="/assets/Map-African-Bird-Atlas-API/MaAPI.css" type="text/css">
+	{% endif %}
 	{% if page.plugins contains "birds-of-kenya" %}
-	<script src='/assets/Birds-of-Kenya/birds-of-kenya.js' type="text/javascript"></script>
-	<link rel="stylesheet" href="/assets/Birds-of-Kenya/birds-of-kenya.css" type="text/css">
+		<script src='/assets/Birds-of-Kenya/birds-of-kenya.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="/assets/Birds-of-Kenya/birds-of-kenya.css" type="text/css">
+	{% endif %}
+	{% if page.plugins contains "kenya-bird-map-species-map" %}
+		<script src='/assets/Kenya-bird-map-species-map/KBMSM.js' type="text/javascript"></script>
+		<link rel="stylesheet" href="/assets/Kenya-bird-map-species-map/KBMSM.css" type="text/css">
 	{% endif %}
 {% endif %}
 

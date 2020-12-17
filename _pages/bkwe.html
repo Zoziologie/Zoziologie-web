@@ -1,12 +1,12 @@
 ---
 layout: blank
-permalink: /birdingkenyawithebird/
-title: "Birding Kenya with eBird"
+permalink: /birdingwithebird/
+title: "Birding with eBird"
 plugins:
 - token
 - jQuery
 - Bootstrap
-- BirdingKenyaWitheBird
+- BirdingWitheBird
 - Leaflet
 - Leaflet.MakiMarker
 - Leaflet.markercluster
@@ -15,7 +15,7 @@ plugins:
 - font-awesome
 - handsontable
 - popper.js
-- bootstrap-multiselect
+- bootstrap-select
 ---
 
 <div class="container-fluid">
@@ -27,57 +27,25 @@ plugins:
 			<form class="form-inline my-3">
 				<div role="group" class="form-group">
 					<label for="select-Date" class="d-block">Dates:</label>
-					<div id="select-Date" role="group" tabindex="-1" class="btn-group-toggle btn-group btn-group-sm">
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="0"><span>Jan</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="1"><span>Fev</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="2"><span>Mar</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="3"><span>Apr</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="4"><span>May</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="5"><span>Jun</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="6"><span>Jul</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="7"><span>Aug</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="8"><span>Sep</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="9"><span>Oct</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="10"><span>Nov</span>
-						</label>
-						<label class="btn btn-secondary btn-sm active">
-							<input type="checkbox" name="selectDate" autocomplete="off" value="11"><span>Dec</span>
-						</label>
-					</div>
+					<select id="select-Date" class="selectpicker" role="group" multiple>
+						<option value="0" selected>January</option>
+						<option value="1" selected>February</option>
+						<option value="2" selected>March</option>
+						<option value="3" selected>April</option>
+						<option value="4" selected>May</option>
+						<option value="5" selected>June</option>
+						<option value="6" selected>July</option>
+						<option value="7" selected>August</option>
+						<option value="8" selected>September</option>
+						<option value="9" selected>October</option>
+						<option value="10" selected>November</option>
+						<option value="11" selected>December</option>
+					</select>
 				</div>
 				<div role="group" class="form-group  ml-sm-3">
 					<label for="select-Region" class="d-block">Region:</label>
-					<select id="select-Region" role="group" multiple="multiple">
-						<option value="KE-110" selected>Nairobi</option>
-						<option value="KE-200" selected>Central</option>
-						<option value="KE-300" selected>Coast</option>
-						<option value="KE-400" selected>Eastern</option>
-						<option value="KE-500" selected>North-Eastern</option>
-						<option value="KE-600" selected>Nyanza</option>
-						<option value="KE-700" selected>Rift Valley</option>
-						<option value="KE-800" selected>Western</option>
-					</select>
+					<select id="select-Region" class="selectpicker" multiple>
+					</select>			  
 				</div>
 				<div role="group" class="form-group ml-sm-3">
 					<label for="number-checklists" class="d-block">Number of Checklist:</label>
@@ -99,7 +67,7 @@ plugins:
 				<button type="button" onclick="runTable()" class="btn ml-sm-3 btn-primary">Submit</button>-->
 				<div role="group" class="form-group  ml-sm-3">
 					<label for="select-Species" class="d-block">Selection of Species:</label>
-					<select id="select-Species" role="group" multiple="multiple"></select>
+					<select id="select-Species" class="selectpicker" role="group" multiple></select>
 				</div>
 			</form>
 			<div id="table"></div>
@@ -107,11 +75,22 @@ plugins:
 	</div>
 </div>
 
-<div id="mymodal" class="modal" tabindex="-1" role="dialog">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-body">
-				<i class="fas fa-3x fa-circle-notch fa-spin" id="waait"></i>Loading...
+<div id="mymodal" class="modal fade" tabindex="-1" role="dialog">
+	<div class="vertical-alignment-helper">
+		<div class="modal-dialog vertical-align-center" >
+			<div class="modal-content">
+				<div class="modal-body text-center">
+					<div class="dropdown-menu" id="selectCountry">
+						<h6 class="dropdown-header">Choose Country</h6>
+						<a class="dropdown-item" href="#" value="KE">Kenya</a>
+						<a class="dropdown-item" href="#" value="ES">Spain</a>
+						<a class="dropdown-item disabled" href="#" value="SA">South Africa</a>
+						
+					  </div>
+					  <div id="loading" style="display: none;">
+						<i class="fas fa-3x fa-circle-notch fa-spin" id="waait"></i>
+					  </div>
+				</div>
 			</div>
 		</div>
 	</div>
