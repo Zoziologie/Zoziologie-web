@@ -1,0 +1,12 @@
+[submodule "assets/SeeYourObservations"]
+	path = assets/SeeYourObservations
+	url = https://github.com/Zoziologie/SeeYourObservations.git
+[submodule "assets/biolovision2eBird"]
+	path = assets/biolovision2eBird
+	url = https://github.com/Zoziologie/Biolovision2eBird.git
+[submodule "assets/eBird2LaTeX"]
+	path = assets/eBird2LaTeX
+	url = https://github.com/Zoziologie/eBird2LaTeX.git
+[submodule "assets/Merge2Hotspot"]
+	path = assets/Merge2Hotspot
+	url = https://github.com/Zoziologie/Merge2Hotspot.git
