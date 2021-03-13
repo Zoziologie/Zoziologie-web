@@ -10,3 +10,21 @@
 [submodule "assets/Merge2Hotspot"]
 	path = assets/Merge2Hotspot
 	url = https://github.com/Zoziologie/Merge2Hotspot.git
+[submodule "assets/geojson"]
+	path = assets/geojson
+	url = https://github.com/Zoziologie/ViewGeoJSON.git
+[submodule "assets/GlobalRareeBird"]
+	path = assets/GlobalRareeBird
+	url = https://github.com/Zoziologie/GlobalRareeBird.git
+[submodule "assets/BirdingWitheBird"]
+	path = assets/BirdingWitheBird
+	url = https://github.com/Zoziologie/BirdingWitheBird.git
+[submodule "assets/Map-African-Bird-Map-API"]
+	path = assets/Map-African-Bird-Map-API
+	url = https://github.com/Zoziologie/Map-African-Bird-Map-API.git
+[submodule "assets/Map-eBird-API"]
+	path = assets/Map-eBird-API
+	url = https://github.com/Zoziologie/Map-eBird-API.git
+[submodule "assets/Check-Checklists"]
+	path = assets/Check-Checklists
+	url = https://github.com/Zoziologie/Check-Checklists.git
