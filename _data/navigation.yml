@@ -3,8 +3,8 @@ main:
 - title: "Biolovision2eBird"
   url: /biolovision2ebird/
 
-- title: "eBird2LaTeX"
-  url: /ebird2latex/
+#- title: "eBird2LaTeX"
+#  url: /ebird2latex/
 
 - title: "See your observation"
   url: /see-your-observations/
@@ -12,5 +12,8 @@ main:
 - title: "Merge2Hotspot"
   url: /merge2hotspot/
 
-- title: "QueryMapBiolovision"
-  url: /querymapbiolovision/
+#- title: "Check checklists"
+#  url: /check-checklists/
+
+- title: "Global Rare eBird"
+  url: /globalrareebird/

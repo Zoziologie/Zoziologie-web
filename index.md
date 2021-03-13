@@ -51,13 +51,6 @@ feature_row22:
     excerpt: "See all rare birds from eBird."
     url: "/globalrareebird/"
     btn_label: " " 
-  - image_path: /assets/QueryMapBiolovision/images/qmb_static.png
-    image_path_2: /assets/QueryMapBiolovision/images/qmb.gif
-    alt: "QueryMapBiolovision gif"
-    title: "Query Map Biolovision"
-    excerpt: "Search custum area on any biolovision websites."
-    url: "/querymapbiolovision/"
-    btn_label: " " 
 feature_row3:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
@@ -76,7 +69,7 @@ feature_row4:
     btn_label: " " 
 ---
 
-<img src="/assets/images/scroll-down.svg" id="scroll-down">
+<!--<img src="/assets/images/scroll-down.svg" id="scroll-down">-->
 
 {% include feature_row %}
 
